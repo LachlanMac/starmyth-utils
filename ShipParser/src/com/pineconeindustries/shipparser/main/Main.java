@@ -10,12 +10,10 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		BufferedImage img = ImageReader.readImage("ShipTemplate2");
+		BufferedImage img = ImageReader.readImage("StationTemplate");
 
 		Ship s = new Ship(img);
 		s.read();
-
-		// s.explode("bigship", 64);
 
 		boolean moreRooms = true;
 		while (moreRooms) {
@@ -48,7 +46,7 @@ public class Main {
 
 		try {
 
-			br = new BufferedWriter(new FileWriter(new File("res/100-Ragnarok.txt")));
+			br = new BufferedWriter(new FileWriter(new File("res/1-DarNuraOutpost.txt")));
 			br.write(stringo);
 			br.close();
 		} catch (IOException e) {
@@ -57,7 +55,7 @@ public class Main {
 		}
 		try {
 
-			br = new BufferedWriter(new FileWriter(new File("res/100-Ragnarok-rooms.txt")));
+			br = new BufferedWriter(new FileWriter(new File("res/1-DarNuraOutpost-rooms.txt")));
 
 			br.write(s.getRoomData());
 			br.close();
@@ -65,7 +63,7 @@ public class Main {
 
 			e.printStackTrace();
 		}
-
+		s.explode("bigstation", 64);
 	}
 
 }
