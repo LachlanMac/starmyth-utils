@@ -68,90 +68,89 @@ public class Tile {
 
 	public String getTileCode() {
 
-		int x = 0;
+		char x = '0';
 
 		switch (tileType) {
 		case BRIDGE:
-			x = 25;
+			x = 'z';
 			break;
 		case DOOR:
 			System.out.println("DEFAULT DOOR loaded");
 			break;
-
 		case DOOR_EW_OPEN:
-			x = 31;
+			x = 'y';
 			break;
 		case DOOR_EW_CLOSED:
-			x = 32;
+			x = 'm';
 			break;
 		case DOOR_NS_OPEN:
-			x = 33;
+			x = 'n';
 			break;
 		case DOOR_NS_CLOSED:
-			x = 34;
+			x = 'o';
 			break;
 		case ZONE:
 			System.out.println("Default zone loaded");
 			break;
 		case ZONE_E_CLOSED:
-			x = 40;
+			x = 'd';
 			break;
 		case ZONE_W_CLOSED:
-			x = 41;
+			x = 'e';
 			break;
 		case ZONE_N_CLOSED:
-			x = 42;
+			x = 'f';
 			break;
 		case ZONE_S_CLOSED:
-			x = 43;
+			x = 'g';
 			break;
 		case ZONE_E_OPEN:
-			x = 44;
+			x = 'h';
 			break;
 		case ZONE_W_OPEN:
-			x = 45;
+			x = 'i';
 			break;
 		case ZONE_N_OPEN:
-			x = 46;
+			x = 'j';
 			break;
 		case ZONE_S_OPEN:
-			x = 47;
+			x = 'k';
 			break;
 		case ENGINEERING:
-			x = 50;
+			x = 'c';
 			break;
 		case FOYER:
-			x = 20;
+			x = 'b';
 			break;
 		case HALLWAY:
-			x = 21;
+			x = 'a';
 			break;
 		case MEDICAL:
-			x = 60;
+			x = 'x';
 			break;
 		case ROOM:
-			x = 200;
+			x = 'w';
 			break;
 		case SHOP:
-			x = 80;
+			x = 'v';
 			break;
 		case SPACE:
-			x = 0;
+			x = 'p';
 			break;
 		case WALL:
-			x = 1;
+			x = 'q';
 			break;
 		case DIAGWALL_NE:
-			x = 2;
+			x = 'r';
 			break;
 		case DIAGWALL_NW:
-			x = 3;
+			x = 's';
 			break;
 		case DIAGWALL_SE:
-			x = 4;
+			x = 't';
 			break;
 		case DIAGWALL_SW:
-			x = 5;
+			x = 'u';
 			break;
 		default:
 			System.out.println("UNRECONGIZED PARAM = " + x);
@@ -159,12 +158,9 @@ public class Tile {
 
 		}
 
-		String hex = Integer.toHexString(x);
-		if (hex.length() == 1) {
-			hex = "0" + hex;
-		}
+		char[] temp = new char[] { x };
 
-		return hex;
+		return new String(temp);
 
 	}
 

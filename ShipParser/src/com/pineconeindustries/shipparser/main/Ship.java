@@ -33,13 +33,35 @@ public class Ship {
 		StringBuilder sb = new StringBuilder();
 		for (int y = 0; y < height; y++) {
 			for (int x = 0; x < width; x++) {
-
 				sb.append(layout[x][y].getTileCode());
-
 			}
 		}
 
 		return sb.toString();
+	}
+
+	public String condense(String data) {
+		int startSize = data.length();
+		String localData = data;
+		for (char c : Base36.keyIndex) {
+
+			if (Character.isDigit(c)) {
+
+			} else {
+
+				char[] check = new char[] { c, c, c, c, c, c };
+				String tempCheck = new String(check);
+				String tempSymbol = Character.toString(c).toUpperCase();
+				localData = localData.replace(tempCheck, tempSymbol);
+
+			}
+
+		}
+		int endSize = localData.length();
+
+		System.out.println("Compressed from " + startSize + " to " + endSize);
+		return localData.trim();
+
 	}
 
 	public void handleDoors() {
